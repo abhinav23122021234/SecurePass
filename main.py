@@ -71,12 +71,14 @@ def find_password():
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
 window.title("SecurePass")
-window.config(padx=50, pady=50)
+window.config(padx=50, pady=50,bg="#2C2F33")
 
-canvas = Canvas(height=200, width=200)
+canvas = Canvas(height=200, width=200, bg="#2C2F33", highlightthickness=0)  # match the background color
+canvas.create_rectangle(5, 5, 195, 195, outline="#D3D3D3", width=3)  # silver border
 logo_img = PhotoImage(file="logo.png")
 canvas.create_image(100, 100, image=logo_img)
 canvas.grid(row=0, column=1)
+
 
 # Labels
 Label(text="Website:").grid(row=1, column=0, sticky="E")
